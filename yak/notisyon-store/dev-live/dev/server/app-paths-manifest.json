@@ -1,0 +1,14 @@
+{
+  "/api/admin/operations/route": "app/api/admin/operations/route.js",
+  "/api/admin/theme/route": "app/api/admin/theme/route.js",
+  "/api/admin/entities/route": "app/api/admin/entities/route.js",
+  "/api/admin/forms/route": "app/api/admin/forms/route.js",
+  "/admin/theme/[panel]/page": "app/admin/theme/[panel]/page.js",
+  "/admin/products/[id]/page": "app/admin/products/[id]/page.js",
+  "/admin/theme/page": "app/admin/theme/page.js",
+  "/admin/theme/header/page": "app/admin/theme/header/page.js",
+  "/admin/theme/footer/page": "app/admin/theme/footer/page.js",
+  "/admin/control/[module]/page": "app/admin/control/[module]/page.js",
+  "/admin/forms/page": "app/admin/forms/page.js",
+  "/admin/orders/page": "app/admin/orders/page.js"
+}

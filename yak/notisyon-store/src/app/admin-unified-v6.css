@@ -1,0 +1,329 @@
+/* Final admin-wide visual contract. Every management module inherits this layer. */
+.admin-shell-v3 {
+  --admin-ui-canvas: #eef1f5;
+  --admin-ui-paper: #fff;
+  --admin-ui-ink: #10294f;
+  --admin-ui-copy: #52657e;
+  --admin-ui-muted: #8392a6;
+  --admin-ui-line: #dce3ec;
+  --admin-ui-blue: #5274ff;
+  --admin-ui-blue-soft: #edf2ff;
+  --admin-ui-green: #25ad67;
+  --admin-ui-red: #db6267;
+}
+
+/* Typography and controls shared by every admin route. */
+.admin-shell-v3 .admin-main { color: var(--admin-ui-ink); font-size: 15px; line-height: 1.46; }
+.admin-shell-v3 .admin-main :is(h2, h3, h4) { color: var(--admin-ui-ink); letter-spacing: -.018em; }
+.admin-shell-v3 .admin-main h2 { font-size: 20px; font-weight: 620; }
+.admin-shell-v3 .admin-main h3 { font-size: 16px; font-weight: 620; }
+.admin-shell-v3 .admin-main p { color: var(--admin-ui-copy); font-size: 13px; line-height: 1.5; }
+.admin-shell-v3 .admin-main small { font-size: 11.5px; line-height: 1.4; }
+.admin-shell-v3 .admin-main label { color: #3f536e; font-size: 13px; line-height: 1.35; }
+.admin-shell-v3 .admin-main :is(input, select, textarea) {
+  background: #fff;
+  border-color: #cfd9e5;
+  color: #203a5b;
+  font-size: 14px;
+  line-height: 1.35;
+  min-height: 44px;
+}
+.admin-shell-v3 .admin-main textarea { min-height: 120px; }
+.admin-shell-v3 .admin-main button:not(.icon-action) { font-size: 13px; min-height: 40px; }
+
+/* A heading is one heading: remove legacy blue eyebrow labels above card titles. */
+.admin-shell-v3 .admin-main .eyebrow,
+.admin-shell-v3 .admin-main :is(article, section, div) > header > div:has(> h2, > h3) > span:first-child,
+.admin-shell-v3 .admin-main span:first-child:has(+ :is(h1, h2, h3, h4)),
+.admin-shell-v3 .admin-main .commerce-settings-nav > header > span:first-child {
+  display: none !important;
+}
+
+/* Shared card language across catalog, operations, content, settings and system pages. */
+.admin-shell-v3 .admin-main :is(
+  .ops-panel,
+  .customer-panel,
+  .team-panel,
+  .benefit-panel,
+  .newsletter-panel,
+  .notification-operations,
+  .notification-table,
+  .integration-center,
+  .integration-summary-strip,
+  .category-explorer,
+  .category-editor,
+  .entity-center,
+  .system-card,
+  .commerce-settings-card,
+  .order-filter,
+  .order-table,
+  .order-detail-card,
+  .page-studio,
+  .seo-card,
+  .admin-theme,
+  .admin-blocks,
+  .files-panel,
+  .blog-panel,
+  .report-panel,
+  .report-workbench,
+  .report-cta,
+  .search-report,
+  .api-access-intro,
+  .api-token-list,
+  .automation-center,
+  .control-form,
+  .control-checks,
+  .control-help,
+  .review-admin-summary,
+  .review-admin-list,
+  .product-create-card,
+  .product-create-progress,
+  .design-editor-card,
+  .studio-card
+) {
+  background: var(--admin-ui-paper) !important;
+  border: 1px solid var(--admin-ui-line) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 2px 8px rgba(22, 46, 79, .025) !important;
+}
+.admin-shell-v3 .admin-main :is(
+  .ops-panel,
+  .customer-panel,
+  .team-panel,
+  .benefit-panel,
+  .newsletter-panel,
+  .report-panel,
+  .system-card,
+  .commerce-settings-card
+) > header {
+  border-bottom: 1px solid #e4e9f0 !important;
+  min-height: 82px;
+  padding: 18px 21px !important;
+}
+
+/* Legacy promo/hero panels become calm work-area introductions. */
+.admin-shell-v3 .admin-main :is(
+  .benefit-hero,
+  .dictionary-hero,
+  .api-access-intro,
+  .integration-toolbar,
+  .customer-toolbar,
+  .order-workspace-toolbar,
+  .catalog-studio-head,
+  .control-hero,
+  .block-page-intro,
+  .blog-admin-hero,
+  .managed-hero
+) {
+  background: #fff !important;
+  border: 1px solid var(--admin-ui-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 8px rgba(22, 46, 79, .025) !important;
+  color: var(--admin-ui-ink) !important;
+}
+.admin-shell-v3 .admin-main :is(
+  .benefit-hero,
+  .dictionary-hero,
+  .api-access-intro,
+  .integration-toolbar,
+  .customer-toolbar,
+  .order-workspace-toolbar,
+  .catalog-studio-head,
+  .control-hero,
+  .block-page-intro,
+  .blog-admin-hero,
+  .managed-hero
+) :is(h2, h3, p, span) { color: inherit !important; }
+
+/* Tabs use text, not decorative icon tiles. */
+.admin-shell-v3 .admin-main :is(.report-tabs, .category-tabs, .order-queue-tabs, .blog-filter-tabs) {
+  background: #fff !important;
+  border: 1px solid var(--admin-ui-line) !important;
+  border-radius: 13px !important;
+  box-shadow: none !important;
+  padding: 5px !important;
+}
+.admin-shell-v3 .admin-main :is(.report-tabs, .category-tabs, .order-queue-tabs, .blog-filter-tabs) button {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 9px !important;
+  color: #5c6e85 !important;
+  font-size: 13px !important;
+  min-height: 40px;
+}
+.admin-shell-v3 .admin-main :is(.report-tabs, .category-tabs, .order-queue-tabs, .blog-filter-tabs) button.active {
+  background: var(--admin-ui-blue-soft) !important;
+  box-shadow: inset 0 -2px 0 var(--admin-ui-blue) !important;
+  color: #3159c8 !important;
+}
+.admin-shell-v3 .integration-toolbar button.active {
+  background: var(--admin-ui-blue-soft) !important;
+  color: #3159c8 !important;
+}
+.admin-shell-v3 .integration-logo { display: none !important; }
+.admin-shell-v3 .integration-cards article > header {
+  grid-template-columns: 1fr auto !important;
+}
+.admin-shell-v3 .admin-main button.active:not(.danger),
+.admin-shell-v3 .admin-main a.active:not(.danger) {
+  background: var(--admin-ui-blue-soft) !important;
+  border-color: #b9c8ff !important;
+  color: #3159c8 !important;
+}
+
+/* Operational setting pages use the same calm, icon-free help language. */
+.admin-shell-v3 .control-help {
+  background: #fff !important;
+  border-color: var(--admin-ui-line) !important;
+  grid-template-columns: 1fr !important;
+}
+.admin-shell-v3 .control-help > i { display: none !important; }
+.admin-shell-v3 .control-help p { color: #687990 !important; }
+.admin-shell-v3 .control-score > i > em { background: var(--admin-ui-blue) !important; }
+.admin-shell-v3 .premium-switch.on i { background: var(--admin-ui-blue) !important; }
+
+/* Tables: larger text, restrained headers and clearer rows. */
+.admin-shell-v3 .admin-main :is(
+  .ops-table,
+  .customer-table,
+  .team-table,
+  .entity-table,
+  .system-table,
+  .newsletter-table,
+  .notification-table,
+  .benefit-table,
+  .blog-table,
+  .admin-product-table,
+  .order-table,
+  .search-report-table
+) :is(.table-head, > header, > div:first-child) {
+  color: #66778e;
+  font-size: 12px;
+}
+.admin-shell-v3 .admin-main :is(
+  .ops-table,
+  .customer-table,
+  .team-table,
+  .entity-table,
+  .system-table,
+  .newsletter-table,
+  .notification-table,
+  .benefit-table,
+  .blog-table,
+  .admin-product-table,
+  .order-table,
+  .search-report-table
+) :is(.table-row, > div, > a) {
+  color: #263d5c;
+  font-size: 13px;
+  min-height: 58px;
+}
+
+/* Status pills and helper copy remain readable. */
+.admin-shell-v3 .admin-main :is(.operation-state, .create-status, .benefit-state, .team-active, .customer-active) {
+  font-size: 11.5px !important;
+  line-height: 1.2;
+}
+.admin-shell-v3 .admin-main :is(.admin-help, .blog-field-help, .html-editor-hint, .price-note, .shipping-note, .field-help) {
+  color: #75869b;
+  font-size: 12px !important;
+  line-height: 1.5;
+}
+
+/* Summary labels follow the same neutral hierarchy on every operations page. */
+.admin-shell-v3 .admin-main :is(
+  .customer-kpis,
+  .customer-summary-cards,
+  .order-kpis,
+  .benefit-kpis,
+  .notification-kpis,
+  .catalog-summary,
+  .integration-summary-strip
+) article > span {
+  color: #52657e !important;
+  font-size: 12px !important;
+  letter-spacing: .02em !important;
+  text-transform: none !important;
+}
+
+/* Report center rebuilt to the same visual contract as the dashboard. */
+.admin-shell-v3 .report-center-v2 { display: grid; gap: 17px; }
+.admin-shell-v3 .report-workbench {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr auto auto;
+  padding: 18px 21px !important;
+}
+.admin-shell-v3 .report-workbench > p { font-size: 14px; margin: 0; }
+.admin-shell-v3 .report-period { border-left: 1px solid var(--admin-ui-line); padding: 2px 22px; }
+.admin-shell-v3 .report-period span { color: #7b899b; display: block; font-size: 11.5px; }
+.admin-shell-v3 .report-period b { color: var(--admin-ui-ink); display: block; font-size: 14px; margin-top: 3px; }
+.admin-shell-v3 .report-export {
+  background: var(--admin-ui-navy, #102a52) !important;
+  border: 1px solid var(--admin-ui-navy, #102a52) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  padding-inline: 16px !important;
+}
+.admin-shell-v3 .report-tabs { display: flex; gap: 2px; }
+.admin-shell-v3 .report-tabs button i { display: none !important; }
+.admin-shell-v3 .report-center-v2 .report-summary { display: grid; gap: 13px; grid-template-columns: repeat(4, 1fr); }
+.admin-shell-v3 .report-center-v2 .report-kpi {
+  background: #fff !important;
+  border: 1px solid var(--admin-ui-line) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 2px 8px rgba(22, 46, 79, .025) !important;
+  min-height: 132px;
+  padding: 20px !important;
+}
+.admin-shell-v3 .report-center-v2 .report-kpi:first-child { border-color: var(--admin-ui-blue) !important; }
+.admin-shell-v3 .report-center-v2 .report-kpi > i { display: none !important; }
+.admin-shell-v3 .report-center-v2 .report-kpi span { color: #334864; font-size: 14px; letter-spacing: 0; text-transform: none; }
+.admin-shell-v3 .report-center-v2 .report-kpi:first-child span,
+.admin-shell-v3 .report-center-v2 .report-kpi:first-child b { color: var(--admin-ui-blue); }
+.admin-shell-v3 .report-center-v2 .report-kpi b { color: #344866; display: block; font-size: 27px; font-weight: 520; margin: 9px 0 5px; }
+.admin-shell-v3 .report-center-v2 .report-kpi small { color: #8290a3; font-size: 12px; }
+.admin-shell-v3 .report-center-v2 .report-layout { display: grid; gap: 17px; grid-template-columns: minmax(0, 1.55fr) minmax(330px, .72fr); }
+.admin-shell-v3 .report-center-v2 .report-layout.lower { grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); }
+.admin-shell-v3 .report-center-v2 .report-panel > header { min-height: 88px; padding: 18px 21px !important; }
+.admin-shell-v3 .report-center-v2 .report-panel h2 { font-size: 20px; margin: 0; }
+.admin-shell-v3 .report-center-v2 .report-panel header p { font-size: 12.5px; margin: 5px 0 0; }
+.admin-shell-v3 .report-center-v2 .report-panel header > strong { color: var(--admin-ui-ink); font-size: 20px; }
+.admin-shell-v3 .report-center-v2 .report-panel header > strong small { color: #7c899b; font-size: 10.5px; }
+.admin-shell-v3 .report-center-v2 .report-panel header > a { color: #315ac8; font-size: 12px; }
+.admin-shell-v3 .report-center-v2 .report-bars { background-image: linear-gradient(#e8edf3 1px, transparent 1px); background-size: 100% 25%; height: 300px; }
+.admin-shell-v3 .report-center-v2 .report-bars i { background: #5274ff; }
+.admin-shell-v3 .report-center-v2 .report-bars b { font-size: 10px; }
+.admin-shell-v3 .report-center-v2 .report-bars small { font-size: 10.5px; }
+.admin-shell-v3 .report-center-v2 .report-bars:has(> div:only-child) { justify-content: center; }
+.admin-shell-v3 .report-center-v2 .report-bars > div:only-child { flex: 0 0 140px; }
+.admin-shell-v3 .report-center-v2 .report-statuses > div { min-height: 64px; }
+.admin-shell-v3 .report-center-v2 .report-statuses b { font-size: 13px; }
+.admin-shell-v3 .report-center-v2 .report-statuses small { font-size: 11px; }
+.admin-shell-v3 .report-center-v2 .report-statuses strong { font-size: 16px; }
+.admin-shell-v3 .report-center-v2 .report-product-table > header,
+.admin-shell-v3 .report-center-v2 .report-product-table > div { font-size: 12.5px; min-height: 58px; padding: 14px 21px; }
+.admin-shell-v3 .report-center-v2 .report-product-table > header { font-size: 11.5px; }
+.admin-shell-v3 .report-center-v2 .report-product-table b { font-size: 13px; }
+.admin-shell-v3 .report-center-v2 .report-product-table small { font-size: 11px; }
+.admin-shell-v3 .report-center-v2 .insight p { display: block; min-height: 64px; padding: 13px 0; }
+.admin-shell-v3 .report-center-v2 .insight p > i { display: none !important; }
+.admin-shell-v3 .report-center-v2 .insight b { font-size: 13px; }
+.admin-shell-v3 .report-center-v2 .insight small { font-size: 11px; }
+.admin-shell-v3 .report-cta h3 { font-size: 18px; }
+.admin-shell-v3 .report-cta p { font-size: 13px; }
+.admin-shell-v3 .report-cta a { font-size: 13px; }
+
+@media (max-width: 1050px) {
+  .admin-shell-v3 .report-center-v2 .report-summary { grid-template-columns: 1fr 1fr; }
+  .admin-shell-v3 .report-center-v2 .report-layout,
+  .admin-shell-v3 .report-center-v2 .report-layout.lower { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .admin-shell-v3 .report-workbench { grid-template-columns: 1fr; }
+  .admin-shell-v3 .report-period { border-left: 0; border-top: 1px solid var(--admin-ui-line); padding: 12px 0 0; }
+  .admin-shell-v3 .report-center-v2 .report-summary { grid-template-columns: 1fr; }
+  .admin-shell-v3 .report-tabs { overflow-x: auto; }
+  .admin-shell-v3 .report-tabs button { flex: 0 0 auto; }
+}

@@ -1,0 +1,308 @@
+/* Final admin visual layer. This file intentionally changes presentation only. */
+.admin-shell-v3 {
+  --admin-navy: #17233d;
+  --admin-navy-hover: #22365b;
+  --admin-blue: #315fd3;
+  --admin-blue-hover: #254fb9;
+  --admin-blue-soft: #eaf0ff;
+  --admin-canvas: #edf3f8;
+  --admin-surface: #ffffff;
+  --admin-surface-soft: #f6f8fb;
+  --admin-line: #d8e1eb;
+  --admin-line-strong: #c3cfdd;
+  --admin-ink: #16253c;
+  --admin-text: #34465f;
+  --admin-muted: #65758a;
+  --admin-subtle: #8290a3;
+  --admin-success: #1f9d60;
+  --admin-danger: #c84a4a;
+  --admin-warning: #b87817;
+  background: var(--admin-canvas);
+  color: var(--admin-ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  grid-template-columns: 282px minmax(0, 1fr);
+  line-height: 1.45;
+}
+
+.admin-shell-v3 * { scrollbar-color: #a8b6c7 transparent; }
+.admin-shell-v3 ::selection { background: #cbd9ff; color: #10213a; }
+
+/* Sidebar */
+.admin-shell-v3 .admin-sidebar {
+  background: #fbfcfe;
+  border-color: var(--admin-line);
+  box-shadow: 8px 0 30px #18304e0a;
+  padding: 20px 15px 15px;
+}
+.admin-shell-v3 .admin-brand { gap: 12px; padding: 2px 8px 20px; }
+.admin-shell-v3 .admin-brand-mark {
+  background: var(--admin-navy);
+  border-radius: 12px;
+  box-shadow: 0 7px 18px #17233d24;
+  height: 42px;
+  width: 42px;
+}
+.admin-shell-v3 .admin-brand b { color: var(--admin-ink); font-size: 15px; letter-spacing: .075em; }
+.admin-shell-v3 .admin-brand span { color: var(--admin-muted); font-size: 9px; margin-top: 4px; }
+.admin-shell-v3 .admin-store-switch {
+  background: #f1f5f9;
+  border-color: var(--admin-line);
+  border-radius: 12px;
+  margin: 0 2px 16px;
+  padding: 12px 36px 12px 13px;
+}
+.admin-shell-v3 .admin-store-switch span { color: var(--admin-muted); font-size: 10px; }
+.admin-shell-v3 .admin-store-switch b { color: var(--admin-ink); font-size: 12px; margin-top: 4px; }
+.admin-shell-v3 .admin-store-switch i { color: var(--admin-muted); top: 22px; }
+
+.admin-shell-v3 .admin-nav-groups summary {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #3d4e65;
+  font-size: 13px;
+  gap: 11px;
+  min-height: 43px;
+  padding: 10px 11px;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+.admin-shell-v3 .admin-nav-groups summary svg { height: 17px; width: 17px; }
+.admin-shell-v3 .admin-nav-groups summary b { font-weight: 700; }
+.admin-shell-v3 .admin-nav-groups summary span { color: #8592a4; }
+.admin-shell-v3 .admin-nav-groups summary:hover {
+  background: #f0f4f8;
+  border-color: #e2e8ef;
+  color: var(--admin-navy);
+}
+.admin-shell-v3 .admin-nav-groups details[open] summary {
+  background: #eef3f9;
+  border-color: #e1e8f0;
+  color: var(--admin-navy);
+}
+.admin-shell-v3 .admin-nav-groups details > div { gap: 2px; padding: 3px 0 8px 31px; }
+.admin-shell-v3 .admin-nav-groups details a {
+  border-color: #dfe6ee;
+  color: #59697d !important;
+  font-size: 11.5px !important;
+  line-height: 1.35;
+  min-height: 37px;
+  padding: 9px 10px 9px 15px !important;
+}
+.admin-shell-v3 .admin-nav-groups details a:hover {
+  background: #edf2f8 !important;
+  color: #17365f !important;
+  transform: translateX(2px);
+}
+.admin-shell-v3 .admin-nav-groups details a.active {
+  background: #e8effc !important;
+  color: #234fae !important;
+  font-weight: 750;
+}
+.admin-shell-v3 .admin-nav-groups details a.active::before { background: var(--admin-blue); height: 23px; }
+.admin-shell-v3 .admin-profile { padding: 11px 6px; }
+.admin-shell-v3 .admin-profile > b { height: 36px; width: 36px; }
+.admin-shell-v3 .admin-profile strong { color: var(--admin-ink); font-size: 12px; }
+.admin-shell-v3 .admin-profile small { color: var(--admin-muted); font-size: 10px; }
+.admin-shell-v3 .admin-sidebar form button {
+  border-color: var(--admin-line-strong);
+  color: #4f6075;
+  font-size: 11px;
+  min-height: 38px;
+}
+.admin-shell-v3 .admin-sidebar form button:hover { background: #eef2f7; color: var(--admin-navy); }
+
+/* Topbar and page title */
+.admin-shell-v3 .admin-main {
+  background: linear-gradient(145deg, #edf3f8 0%, #f4f7fa 52%, #edf2f7 100%);
+  padding: 0 clamp(24px, 2.5vw, 42px) 54px;
+}
+.admin-shell-v3 .admin-commandbar {
+  background: var(--admin-navy);
+  border-color: #273551;
+  height: 72px;
+  margin: 0 calc(clamp(24px, 2.5vw, 42px) * -1) 33px;
+  padding: 13px clamp(24px, 2.5vw, 42px);
+}
+.admin-shell-v3 .admin-command-search > label {
+  background: #ffffff12;
+  border-color: #ffffff22;
+  color: #d8e1ee;
+  min-height: 43px;
+}
+.admin-shell-v3 .admin-command-search input { color: #fff; font-size: 13px; }
+.admin-shell-v3 .admin-command-search input::placeholder { color: #c2ccda; opacity: 1; }
+.admin-shell-v3 .admin-command-search kbd { background: #ffffff12; border-color: #ffffff30; color: #e6edf6; }
+.admin-shell-v3 .admin-commandbar nav > * { border-color: #ffffff2b; color: #eef4fb; min-height: 40px; }
+.admin-shell-v3 .admin-commandbar nav > *:hover { background: #ffffff14; border-color: #ffffff45; }
+.admin-shell-v3 .storefront-link { background: #263652 !important; border-color: #435371 !important; font-size: 11.5px; }
+
+.admin-shell-v3 .admin-top { align-items: flex-start; margin-bottom: 30px; padding-bottom: 0; }
+.admin-shell-v3 .admin-top > div:first-child > span {
+  color: var(--admin-blue);
+  font-size: 10px;
+  letter-spacing: .145em;
+}
+.admin-shell-v3 .admin-top h1 {
+  color: #0f2039;
+  font-size: clamp(30px, 2.4vw, 38px);
+  font-weight: 720;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+  margin-top: 9px;
+}
+.admin-shell-v3 .admin-top p { color: var(--admin-muted); font-size: 13px; line-height: 1.55; margin-top: 10px; }
+.admin-shell-v3 .system-live {
+  border-color: var(--admin-line-strong);
+  border-radius: 11px;
+  box-shadow: 0 5px 18px #17365f0a;
+  color: #45566c;
+  font-size: 11px;
+  min-height: 40px;
+  padding: 10px 13px;
+}
+
+/* Global card, panel and content hierarchy */
+.admin-shell-v3 :is(
+  .dash-card,.ops-panel,.system-card,.order-filter,.order-table,.page-studio,.seo-card,
+  .admin-theme,.admin-blocks,.files-panel,.blog-panel,.category-explorer,.category-editor,
+  .catalog-summary,.catalog-manager,.entity-center > header,.entity-panel,.control-panel,
+  .commerce-settings-card,.settings-navigation,.settings-overview,.api-access-intro,
+  .api-access-create,.api-token-list,.automation-runner,.review-admin-summary,.review-admin > nav
+) {
+  background: var(--admin-surface);
+  border-color: var(--admin-line);
+  box-shadow: 0 1px 2px #17233d05, 0 12px 34px #17233d08;
+}
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.category-explorer,.category-editor,.entity-panel) {
+  border-radius: 16px;
+}
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.entity-panel):hover {
+  border-color: #c9d5e2;
+  box-shadow: 0 1px 2px #17233d06, 0 15px 38px #17233d0c;
+}
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.entity-panel) > header {
+  border-color: #e1e7ee;
+}
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.entity-panel) h2,
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.entity-panel) h3 {
+  color: var(--admin-ink);
+}
+.admin-shell-v3 :is(.dash-card,.control-panel,.commerce-settings-card,.entity-panel) p { color: var(--admin-muted); }
+
+/* Forms and controls */
+.admin-shell-v3 :is(input,select,textarea) {
+  color: #233650;
+  font-size: 13px;
+}
+.admin-shell-v3 :is(input,select,textarea):not([type="checkbox"]):not([type="radio"]):not(.admin-editor-source) {
+  background: #fff;
+  border-color: var(--admin-line-strong);
+  min-height: 43px;
+}
+.admin-shell-v3 :is(input,textarea)::placeholder { color: #8b98a9; opacity: 1; }
+.admin-shell-v3 :is(input,select,textarea):hover { border-color: #aebdcc; }
+.admin-shell-v3 :is(input,select,textarea):focus {
+  border-color: #6488df !important;
+  box-shadow: 0 0 0 3px #315fd31a;
+}
+.admin-shell-v3 label { color: #354860; }
+.admin-shell-v3 label > :is(span,b):first-child { font-size: 12px; }
+.admin-shell-v3 label > small,
+.admin-shell-v3 .control-form label > small { color: var(--admin-muted); font-size: 10.5px; line-height: 1.45; }
+.admin-shell-v3 button,
+.admin-shell-v3 a { transition: background .18s ease, border-color .18s ease, color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.admin-shell-v3 button { font-size: 12px; }
+.admin-shell-v3 button:not(:disabled) { cursor: pointer; }
+.admin-shell-v3 button:not(:disabled):hover { transform: translateY(-1px); }
+.admin-shell-v3 :is(button,a):focus-visible { outline: 3px solid #315fd32e; outline-offset: 2px; }
+
+/* Dashboard */
+.admin-shell-v3 .dash { gap: 20px; }
+.admin-shell-v3 .dash-range { border-color: var(--admin-line); border-radius: 14px; box-shadow: 0 8px 24px #17233d07; padding: 12px 15px; }
+.admin-shell-v3 .dash-range > span { color: #3d4e65; font-size: 12px; }
+.admin-shell-v3 .dash-range a { border-color: #d7e0ea; color: #506176; font-size: 12px; min-height: 38px; }
+.admin-shell-v3 .dash-range a:hover { background: #edf2f8; border-color: #b8c6d6; color: var(--admin-navy); }
+.admin-shell-v3 .dash-range a.active { background: var(--admin-navy); border-color: var(--admin-navy); box-shadow: 0 6px 16px #17233d1d; color: #fff; }
+.admin-shell-v3 .dash-range small { color: var(--admin-muted); font-size: 11.5px; }
+.admin-shell-v3 .dash-kpis article { border-color: var(--admin-line); border-radius: 16px; min-height: 148px; padding: 24px; }
+.admin-shell-v3 .dash-kpis article:not(.primary) { background: #fff; }
+.admin-shell-v3 .dash-kpis article:not(.primary):hover { border-color: #bfccda; box-shadow: 0 14px 32px #17233d0c; transform: translateY(-2px); }
+.admin-shell-v3 .dash-kpis span,.admin-shell-v3 .dash-card header span { color: #526a8d; font-size: 10.5px; }
+.admin-shell-v3 .dash-kpis strong { color: #11223b; font-size: 31px; }
+.admin-shell-v3 .dash-kpis small { color: var(--admin-muted); font-size: 12px; }
+.admin-shell-v3 .dash-kpis article.primary { background: linear-gradient(135deg,#222b46,#171c2d); }
+.admin-shell-v3 .dash-kpis article.primary :is(span,strong,small) { color: #fff; }
+.admin-shell-v3 .dash-kpis article.primary span { color: #b9c9e5; }
+.admin-shell-v3 .dash-kpis article.primary small { color: #d4dceb; }
+.admin-shell-v3 .dash-alerts > a { border-color: var(--admin-line); box-shadow: 0 10px 28px #17233d08; }
+.admin-shell-v3 .dash-alerts > a:hover { border-color: #aebfd1; box-shadow: 0 15px 36px #17233d10; }
+.admin-shell-v3 .dash-card h2 { color: var(--admin-ink); font-size: 20px; }
+.admin-shell-v3 .dash-card header a { color: #2858bc; font-size: 12px; font-weight: 750; }
+.admin-shell-v3 .dash-card header a:hover { color: #153e94; }
+.admin-shell-v3 .journey-step small { color: #3b4e68; font-size: 13px; }
+.admin-shell-v3 .journey-step strong { color: #10223c; }
+.admin-shell-v3 .dash-table .head { color: #65758a; font-size: 11px; }
+.admin-shell-v3 .dash-table > a { color: #33465f; font-size: 12.5px; }
+.admin-shell-v3 .dash-table > a:hover,.admin-shell-v3 .stock-list > a:hover { background: #f5f8fb; }
+
+/* Dense operation pages: titles, tabs and tables */
+.admin-shell-v3 :is(.catalog-summary,.settings-overview,.control-hero + *, .api-access-intro) span,
+.admin-shell-v3 :is(.catalog-studio-head,.entity-center > header,.control-form > header) > div > span {
+  color: var(--admin-blue);
+}
+.admin-shell-v3 :is(.category-tabs,.catalog-tabs,.studio-tabs) {
+  border-color: var(--admin-line);
+  scrollbar-color: #9aaabc transparent;
+}
+.admin-shell-v3 :is(.category-tabs,.catalog-tabs,.studio-tabs) button {
+  color: #55677d;
+  font-size: 12px;
+  min-height: 44px;
+}
+.admin-shell-v3 :is(.category-tabs,.catalog-tabs,.studio-tabs) button:hover { background: #f3f6fa; color: var(--admin-navy); }
+.admin-shell-v3 :is(.category-tabs,.catalog-tabs,.studio-tabs) button.active { color: #244fae; }
+.admin-shell-v3 :is(.enterprise-table,.product-table,.catalog-table,.admin-table) { color: #33475f; }
+.admin-shell-v3 :is(.enterprise-table,.product-table,.catalog-table,.admin-table) :is(.table-head,thead) {
+  background: #f1f5f9;
+  color: #52647a;
+  font-size: 11px;
+  font-weight: 800;
+}
+.admin-shell-v3 :is(.enterprise-table,.product-table,.catalog-table,.admin-table) :is(.table-row,tbody tr) { font-size: 12.5px; }
+.admin-shell-v3 :is(.enterprise-table,.product-table,.catalog-table,.admin-table) :is(.table-row,tbody tr):hover { background: #f5f8fc; }
+.admin-shell-v3 .control-form label { color: #3f5067; font-size: 11.5px; }
+.admin-shell-v3 .control-form input,.admin-shell-v3 .control-form select { color: #233650; font-size: 12.5px; }
+.admin-shell-v3 .control-form > footer span { color: var(--admin-muted); font-size: 10.5px; }
+.admin-shell-v3 .control-form > footer button { background: var(--admin-navy); font-size: 11.5px; min-height: 39px; }
+.admin-shell-v3 .control-form > footer button:hover { background: var(--admin-navy-hover); }
+
+/* Status and feedback */
+.admin-shell-v3 :is(.dash-success,.form-success,.save-success) { color: #157847; }
+.admin-shell-v3 :is(.dash-muted,.table-empty,.blog-empty) { color: var(--admin-muted); }
+.admin-shell-v3 :is(.live,.approved,.success) { font-weight: 700; }
+
+@media(max-width:1200px) {
+  .admin-shell-v3 { grid-template-columns: 258px minmax(0,1fr); }
+  .admin-shell-v3 .admin-main { padding-inline: 26px; }
+  .admin-shell-v3 .admin-commandbar { margin-inline: -26px; padding-inline: 26px; }
+}
+
+@media(max-width:1000px) {
+  .admin-shell-v3 { grid-template-columns: 1fr; }
+  .admin-shell-v3 .admin-sidebar { padding: 13px 16px 15px; }
+  .admin-shell-v3 .admin-nav-groups summary { font-size: 12px; }
+  .admin-shell-v3 .admin-main { padding: 20px; }
+  .admin-shell-v3 .admin-commandbar { display: none; }
+  .admin-shell-v3 .admin-top { margin-bottom: 24px; }
+}
+
+@media(max-width:700px) {
+  .admin-shell-v3 { font-size: 13px; }
+  .admin-shell-v3 .admin-main { padding: 16px; }
+  .admin-shell-v3 .admin-top { gap: 14px; }
+  .admin-shell-v3 .admin-top h1 { font-size: 28px; }
+  .admin-shell-v3 .admin-top p { font-size: 12px; }
+  .admin-shell-v3 .system-live { font-size: 10px; padding: 8px 10px; }
+  .admin-shell-v3 .dash-kpis article { min-height: 132px; }
+  .admin-shell-v3 .dash-card h2 { font-size: 18px; }
+}

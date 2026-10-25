@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/api/orders/route": "app/api/orders/route.js",
+  "/api/paytr/callback/route": "app/api/paytr/callback/route.js",
+  "/api/paytr/token/route": "app/api/paytr/token/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/odeme/page": "app/odeme/page.js",
+  "/page": "app/page.js",
+  "/sepet/page": "app/sepet/page.js",
+  "/siparis/[id]/page": "app/siparis/[id]/page.js",
+  "/urunler/page": "app/urunler/page.js",
+  "/urun/[sku]/page": "app/urun/[sku]/page.js"
+}

@@ -1,0 +1,27 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+type Consent = { analytics: boolean; marketing: boolean };
+type Marketing = { ga4Id?: string; gtmId?: string; googleAdsId?: string; metaPixelId?: string; tiktokPixelId?: string; yandexMetricaId?: string; klaviyoPublicKey?: string; klaviyoEnabled?: boolean };
+function valid(value: unknown, pattern: RegExp) { const text = String(value || "").trim(); return pattern.test(text) ? text : ""; }
+function addExternal(id: string, src: string) { if (document.getElementById(id)) return; const script = document.createElement("script"); script.id = id; script.async = true; script.src = src; document.head.appendChild(script); }
+function addInline(id: string, code: string) { if (document.getElementById(id)) return; const script = document.createElement("script"); script.id = id; script.text = code; document.head.appendChild(script); }
+function installAnalytics(settings: Marketing) {
+  const ga4 = valid(settings.ga4Id, /^G-[A-Z0-9]{5,20}$/i); if (ga4) { addExternal("notisyon-ga4", `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4)}`); addInline("notisyon-ga4-config", `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(ga4)},{anonymize_ip:true});`); }
+  const yandex = valid(settings.yandexMetricaId, /^\d{4,12}$/); if (yandex) addInline("notisyon-yandex", `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');ym(${JSON.stringify(yandex)},'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:false});`);
+}
+function installMarketing(settings: Marketing) {
+  const gtm = valid(settings.gtmId, /^GTM-[A-Z0-9]{4,16}$/i); if (gtm) addInline("notisyon-gtm", `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer',${JSON.stringify(gtm)});`);
+  const ads = valid(settings.googleAdsId, /^AW-\d{5,16}$/i); if (ads) { addExternal("notisyon-google-ads", `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ads)}`); addInline("notisyon-google-ads-config", `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(ads)});`); }
+  const meta = valid(settings.metaPixelId, /^\d{5,24}$/); if (meta) addInline("notisyon-meta-pixel", `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(meta)});fbq('track','PageView');`);
+  const tiktok = valid(settings.tiktokPixelId, /^[A-Z0-9]{8,24}$/i); if (tiktok) addInline("notisyon-tiktok-pixel", `!function(w,d,t){w.TiktokAnalyticsObject=t;var q=w[t]=w[t]||[];q.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'];q.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat([].slice.call(arguments,0)))}};for(var i=0;i<q.methods.length;i++)q.setAndDefer(q,q.methods[i]);q.load=function(e){var n=d.createElement('script');n.async=true;n.src='https://analytics.tiktok.com/i18n/pixel/events.js?sdkid='+e+'&lib='+t;d.getElementsByTagName('script')[0].parentNode.insertBefore(n,d.getElementsByTagName('script')[0])};q.load(${JSON.stringify(tiktok)});q.page()}(window,document,'ttq');`);
+  const klaviyo = valid(settings.klaviyoPublicKey, /^[A-Z0-9_-]{4,40}$/i); if (settings.klaviyoEnabled && klaviyo) addExternal("notisyon-klaviyo", `https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=${encodeURIComponent(klaviyo)}`);
+}
+function savedConsent(): Consent { try { const saved = JSON.parse(localStorage.getItem("notisyon-cookie-consent") || "null"); if (saved?.expiresAt && saved.expiresAt < Date.now()) return { analytics: false, marketing: false }; return { analytics: saved?.preferences?.analytics === true, marketing: saved?.preferences?.marketing === true }; } catch { return { analytics: false, marketing: false }; } }
+export function StorefrontMarketing() {
+  const pathname = usePathname();
+  useEffect(() => { if (pathname.startsWith("/admin")) return; let settings: Marketing = {}; const apply = (consent: Consent) => { if (consent.analytics) installAnalytics(settings); if (consent.marketing) installMarketing(settings); }; const onConsent = (event: Event) => apply((event as CustomEvent<Consent>).detail); window.addEventListener("notisyon-consent", onConsent); fetch("/api/site-experience", { cache: "no-store" }).then((response) => response.json()).then((data) => { settings = data?.publicSettings?.marketing || {}; apply(savedConsent()); }).catch(() => {}); return () => window.removeEventListener("notisyon-consent", onConsent); }, [pathname]);
+  return null;
+}

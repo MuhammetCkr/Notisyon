@@ -1,0 +1,24 @@
+.admin-shell-v3 .admin-main{background:linear-gradient(135deg,#edf3f9 0,#f5f7fa 48%,#eef2f6 100%)}.admin-shell-v3 .admin-top{padding-bottom:25px}.admin-shell-v3 .admin-top h1{letter-spacing:-.035em}.admin-shell-v3 .admin-sidebar{box-shadow:8px 0 32px #1529460a}.admin-shell-v3 .admin-nav-groups a{border-radius:8px;min-height:36px}.admin-shell-v3 .admin-nav-groups a:hover{background:#edf2f8;color:#17365f;filter:none;transform:translateX(2px)}.admin-shell-v3 .admin-nav-groups a.active{box-shadow:inset 3px 0 #315fd3}.admin-shell-v3 :is(.dash-card,.entity-center>header,.control-panel,.commerce-settings-card){transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.admin-shell-v3 :is(button,a):focus-visible{outline:3px solid #315fd333;outline-offset:2px}.admin-shell-v3 button:disabled{cursor:not-allowed;opacity:.55}
+
+@media(max-width:1000px){
+ .admin-shell-v3 .admin-sidebar{display:grid;gap:10px;grid-template-columns:minmax(150px,.7fr) minmax(190px,1.3fr);padding:12px 14px 14px}
+ .admin-shell-v3 .admin-brand{padding:3px 5px}
+ .admin-shell-v3 .admin-store-switch{margin:0}
+ .admin-shell-v3 .admin-nav-groups{display:flex!important;gap:7px;grid-column:1/-1;overflow-x:auto;padding:2px 1px 7px;scrollbar-width:thin}
+ .admin-shell-v3 .admin-nav-groups details{flex:0 0 164px;margin:0}
+ .admin-shell-v3 .admin-nav-groups summary{background:#f5f7fa;border:1px solid #e5e9ef;min-height:43px}
+ .admin-shell-v3 .admin-nav-groups details[open]{flex-basis:210px}
+ .admin-shell-v3 .admin-nav-groups details[open] summary{background:#eef3fa;border-color:#d8e1ed}
+ .admin-shell-v3 .admin-nav-groups details>div{max-height:190px;overflow:auto;padding:4px 0 2px 12px}
+}
+
+@media(max-width:560px){
+ .admin-shell-v3 .admin-sidebar{grid-template-columns:1fr}
+ .admin-shell-v3 .admin-store-switch,.admin-shell-v3 .admin-nav-groups{grid-column:1}
+ .admin-shell-v3 .admin-brand-mark{height:34px;width:34px}
+ .admin-shell-v3 .admin-brand{padding-bottom:0}
+ .admin-shell-v3 .admin-main{padding:16px}
+ .admin-shell-v3 .admin-top{align-items:flex-start}
+ .admin-shell-v3 .admin-top-actions{flex:0 0 auto}
+ .admin-shell-v3 .admin-top h1{font-size:28px}
+}

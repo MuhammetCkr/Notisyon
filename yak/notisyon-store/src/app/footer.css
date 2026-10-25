@@ -1,0 +1,115 @@
+/* Footer has its own namespace so legacy Ticimax/global rules cannot alter it. */
+footer.notisyon-premium-footer {
+  --npf-ink: #171512;
+  --npf-muted: #746b62;
+  --npf-accent: #846c49;
+  background: #f5f1ed !important;
+  color: var(--npf-ink) !important;
+  margin: 72px 0 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+footer.notisyon-premium-footer *,
+footer.notisyon-premium-footer *::before,
+footer.notisyon-premium-footer *::after { box-sizing: border-box; }
+footer.notisyon-premium-footer div { margin: 0 !important; }
+footer.notisyon-premium-footer a { color: inherit; text-decoration: none; }
+footer.notisyon-premium-footer .npf-shell { margin-left: auto !important; margin-right: auto !important; max-width: 1480px; width: calc(100% - 128px); }
+
+.npf-newsletter { background: #fff; border-top: 1px solid #eee8e1; padding: 48px 0 46px; }
+footer.notisyon-premium-footer .npf-newsletter-grid {
+  align-items: center;
+  display: grid !important;
+  gap: clamp(50px, 7vw, 120px) !important;
+  grid-template-columns: minmax(320px, .9fr) minmax(500px, 1.1fr);
+}
+footer.notisyon-premium-footer .npf-newsletter-copy { display: block !important; }
+.npf-kicker { color: var(--npf-accent); font-size: 10px; font-weight: 700; letter-spacing: .16em; margin: 0 0 9px; }
+.npf-newsletter-copy h2 { font-size: clamp(26px, 2vw, 32px); font-weight: 650; letter-spacing: -.04em; line-height: 1.08; margin: 0; }
+.npf-newsletter-copy > p:last-child { color: var(--npf-muted); font-size: 13px; line-height: 1.55; margin: 11px 0 0; }
+.npf-form { margin: 0; }
+footer.notisyon-premium-footer .npf-form-row { display: flex !important; margin: 0 !important; }
+.npf-form-row input { background: #fff; border: 1px solid #d8d0c7; border-radius: 10px 0 0 10px; color: var(--npf-ink); flex: 1; font: inherit; font-size: 13px; height: 56px; min-width: 0; outline: none; padding: 0 19px; }
+.npf-form-row input:focus { border-color: var(--npf-accent); box-shadow: inset 0 0 0 1px var(--npf-accent); }
+.npf-form-row button { background: #181715; border: 1px solid #181715; border-radius: 0 10px 10px 0; color: #fff; cursor: pointer; flex: 0 0 120px; font: 700 11px/1 inherit; letter-spacing: .04em; }
+.npf-permission { align-items: center; color: #7c736a; cursor: pointer; display: flex; font-size: 10px; gap: 7px; line-height: 1.4; margin-top: 11px; }
+.npf-permission input { accent-color: #181715; height: 13px; margin: 0; width: 13px; }
+
+.npf-main { background: #f2ede9; padding: 58px 0 54px; }
+footer.notisyon-premium-footer .npf-main-grid {
+  align-items: start;
+  display: grid !important;
+  gap: clamp(28px, 3.2vw, 62px) !important;
+  grid-template-columns: 1.05fr 1fr 1.12fr 1.16fr 1.32fr;
+}
+footer.notisyon-premium-footer .npf-brand { align-items: center; display: flex !important; flex-direction: column; gap: 22px !important; text-align: center; }
+.npf-logo { display: block; width: 130px; }
+.npf-logo img { display: block; height: auto; mix-blend-mode: multiply; object-fit: contain; width: 130px; }
+.npf-instagram { align-items: center; background: #f9f7f4; border: 1px solid #d8d0c8; border-radius: 50%; display: flex !important; height: 44px; justify-content: center; transition: .2s; width: 44px; }
+.npf-instagram:hover { border-color: var(--npf-accent); transform: translateY(-2px); }
+.npf-instagram svg { fill: none; height: 18px; stroke: currentColor; stroke-width: 1.7; width: 18px; }
+.npf-instagram .npf-instagram-dot { fill: currentColor; stroke: none; }
+.npf-brand p { color: #322d28; font-size: 11px; line-height: 1.6; margin: 0; }
+.npf-nav h3, .npf-contact h3 { color: var(--npf-accent); font-size: 14px; font-weight: 700; margin: 2px 0 31px; position: relative; }
+.npf-nav h3::after, .npf-contact h3::after { background: var(--npf-accent); bottom: -16px; content: ""; height: 1px; left: 0; position: absolute; width: 45px; }
+.npf-nav ul { display: grid; gap: 10px; list-style: none; margin: 0; padding: 0; }
+footer.notisyon-premium-footer .npf-nav a,
+footer.notisyon-premium-footer .npf-contact a { color: #28231f; font-size: 12px; line-height: 1.4; }
+.npf-nav a:hover, .npf-contact a:hover { color: var(--npf-accent) !important; }
+.npf-contact { align-items: flex-start; color: #28231f; display: flex; flex-direction: column; font-style: normal; gap: 10px; margin: 0; }
+.npf-contact h3 { align-self: stretch; }
+.npf-contact p { font-size: 12px; line-height: 1.55; margin: 0; max-width: 260px; }
+
+.npf-bottom { background: #201e1b; color: #d9d1c7; }
+footer.notisyon-premium-footer .npf-bottom > .npf-shell { align-items: center; display: flex !important; gap: 44px !important; justify-content: center; min-height: 46px; }
+.npf-bottom span { font-size: 9px; letter-spacing: .1em; position: relative; text-transform: uppercase; }
+.npf-bottom span + span::before { background: #8c7a60; border-radius: 50%; content: ""; height: 3px; left: -23px; position: absolute; top: 50%; transform: translateY(-50%); width: 3px; }
+
+footer.notisyon-premium-footer .notisyon-whatsapp {
+  align-items: center;
+  background: #25d366;
+  border: 0;
+  border-radius: 999px;
+  bottom: 86px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .14);
+  color: #111 !important;
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 10px;
+  height: 52px;
+  line-height: 1;
+  padding: 0 18px 0 14px;
+  position: fixed;
+  right: 24px;
+  transition: background .2s, box-shadow .2s, transform .2s;
+  z-index: 99999;
+}
+footer.notisyon-premium-footer .notisyon-whatsapp:hover { background: #a1f400; box-shadow: 0 12px 32px rgba(0, 0, 0, .18); color: #111 !important; transform: translateY(-2px); }
+.notisyon-whatsapp-icon { align-items: center; display: flex; flex: 0 0 27px; font-size: 0 !important; height: 27px; justify-content: center; width: 27px; }
+.notisyon-whatsapp-icon svg { display: block; fill: currentColor; height: 27px; width: 27px; }
+footer.notisyon-premium-footer .notisyon-whatsapp-text { font-size: 12px !important; font-weight: 700; letter-spacing: 0; line-height: 1 !important; white-space: nowrap; }
+
+@media (max-width: 1050px) {
+  .npf-shell { width: calc(100% - 64px); }
+  footer.notisyon-premium-footer .npf-newsletter-grid { gap: 38px !important; grid-template-columns: 1fr 1fr; }
+  footer.notisyon-premium-footer .npf-main-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  footer.notisyon-premium-footer .npf-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 680px) {
+  .npf-shell { width: calc(100% - 40px); }
+  .npf-newsletter { padding: 37px 0; }
+  footer.notisyon-premium-footer .npf-newsletter-grid { grid-template-columns: 1fr; }
+  footer.notisyon-premium-footer .npf-form-row { display: grid !important; gap: 8px !important; }
+  .npf-form-row input, .npf-form-row button { border-radius: 9px; height: 50px; width: 100%; }
+  .npf-main { padding: 43px 0; }
+  footer.notisyon-premium-footer .npf-main-grid { gap: 34px !important; grid-template-columns: 1fr; }
+  footer.notisyon-premium-footer .npf-brand { grid-column: auto; }
+  footer.notisyon-premium-footer .npf-bottom > .npf-shell { flex-direction: column; gap: 6px !important; padding: 12px 0; }
+  .npf-bottom span + span::before { display: none; }
+  footer.notisyon-premium-footer .notisyon-whatsapp { bottom: 76px; border-radius: 50%; height: 52px; justify-content: center; padding: 0; right: 16px; width: 52px; }
+  .notisyon-whatsapp-text { display: none; }
+  .notisyon-whatsapp-icon, .notisyon-whatsapp-icon svg { height: 28px; width: 28px; }
+}

@@ -1,0 +1,25 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+import { readDesignConfig } from "@/lib/design-store";
+import { applyDesignTemplate, escapeDesignValue } from "@/lib/design-template";
+import { NewsletterForm } from "@/components/newsletter-form";
+import { readPlatformSettings, settingText } from "@/lib/platform-settings";
+
+export async function SiteFooter() {
+  const [{ brand, footer }, platform] = await Promise.all([readDesignConfig(), readPlatformSettings()]);
+  const email = settingText(platform.company, "email", footer.email), phone = settingText(platform.company, "phone", footer.phone), address = settingText(platform.company, "address", footer.address);
+  const instagramUrl = settingText(platform.social, "instagram_url", footer.instagramUrl), whatsAppConfigured = settingText(platform.social, "whatsapp_url");
+  const whatsAppUrl = whatsAppConfigured || `https://wa.me/${footer.whatsapp.replace(/\D/g, "")}`;
+  if (footer.sourceMode && footer.customHtml.trim()) {
+    const columnsHtml = footer.columns.map((column) => `<nav class="custom-footer-column"><strong>${escapeDesignValue(column.title)}</strong>${column.links.map((link) => `<a href="${escapeDesignValue(link.href)}">${escapeDesignValue(link.label)}</a>`).join("")}</nav>`).join("");
+    const rendered = applyDesignTemplate(footer.customHtml, { logo_url: brand.logoUrl, logo_alt: brand.logoAlt, newsletter_title: footer.newsletterTitle, newsletter_text: footer.newsletterText, instagram_url: instagramUrl, whatsapp_url: whatsAppUrl, email, phone, address, copyright: footer.copyright, footer_columns_html: columnsHtml }, ["footer_columns_html"]);
+    const html=rendered.replace('<div class="custom-newsletter-form">\n    <div class="custom-newsletter-input">E-posta adresin</div>\n    <button type="button">KAYDOL</button>\n    <label>□ Üyelik koşullarını ve kişisel verilerimin korunmasını kabul ediyorum.</label>\n  </div>', '<form class="custom-newsletter-form" action="/api/newsletter" method="post"><input class="custom-newsletter-input" type="email" name="email" required placeholder="E-posta adresin"><button type="submit">KAYDOL</button><label><input type="checkbox" name="consent" value="true" required> Üyelik koşullarını ve kişisel verilerimin korunmasını kabul ediyorum.</label></form>').replace('class="custom-whatsapp" href="#"',`class="custom-whatsapp" href="${whatsAppUrl}"`);
+    return <footer className="notisyon-source-footer">{footer.customCss.trim() ? <style>{footer.customCss}</style> : null}<div dangerouslySetInnerHTML={{ __html: html }}/></footer>;
+  }
+  return <footer className="notisyon-premium-footer">
+    {footer.newsletterEnabled && <section className="npf-newsletter" aria-labelledby="newsletter-title"><div className="npf-shell npf-newsletter-grid"><div className="npf-newsletter-copy"><p className="npf-kicker">NOTİSYON</p><h2 id="newsletter-title">{footer.newsletterTitle}</h2><p>{footer.newsletterText}</p></div><NewsletterForm/></div></section>}
+    <section className="npf-main"><div className="npf-shell npf-main-grid"><div className="npf-brand"><Link href="/" className="npf-logo" aria-label={`${brand.logoAlt} ana sayfa`}><img src={brand.logoUrl} alt={brand.logoAlt}/></Link>{instagramUrl && <a className="npf-instagram" href={instagramUrl} target="_blank" rel="noreferrer" aria-label="Notisyon Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.7" r="1" className="npf-instagram-dot"/></svg></a>}<p>{footer.copyright}</p></div>{footer.columns.map((column) => <nav className="npf-nav" aria-label={column.title} key={column.id}><h3>{column.title}</h3><ul>{column.links.map((link) => <li key={link.id}><Link href={link.href}>{link.label}</Link></li>)}</ul></nav>)}<address className="npf-contact"><h3>İletişim</h3><a href={`mailto:${email}`}>{email}</a><a href={whatsAppUrl} target="_blank" rel="noreferrer">WhatsApp Destek: {phone}</a><p>{address}</p></address></div></section>
+    <div className="npf-bottom"><div className="npf-shell"><span>Güvenli ödeme</span><span>HepsiJet ile hızlı teslimat</span><span>Türkiye’de tasarlandı</span></div></div>
+    {whatsAppUrl && <a aria-label="Notisyon WhatsApp Destek" className="notisyon-whatsapp" href={`${whatsAppUrl}${whatsAppUrl.includes("?")?"&":"?"}text=Merhaba%20Notisyon%2C%20bir%20konuda%20bilgi%20almak%20istiyorum.`} rel="noopener" target="_blank"><span className="notisyon-whatsapp-icon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16.04 3C8.86 3 3.02 8.72 3.02 15.76c0 2.49.74 4.92 2.14 6.98L3 29l6.46-2.07a13.14 13.14 0 0 0 6.57 1.75h.01c7.18 0 13.02-5.72 13.02-12.76C29.06 8.72 23.22 3 16.04 3Zm0 23.52h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-3.83 1.23 1.25-3.67-.26-.4a10.48 10.48 0 0 1-1.72-5.76C5.51 10.3 10.22 5.54 16.04 5.54c5.81 0 10.53 4.76 10.53 10.62 0 5.86-4.72 10.36-10.53 10.36Z"/></svg></span><span className="notisyon-whatsapp-text">WhatsApp Destek</span></a>}
+  </footer>;
+}

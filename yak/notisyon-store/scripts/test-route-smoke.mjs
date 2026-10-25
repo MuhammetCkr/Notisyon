@@ -1,0 +1,15 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { createHmac } from "node:crypto";
+const envText=await fs.readFile(path.join(process.cwd(),".env.local"),"utf8");for(const line of envText.split(/\r?\n/)){const match=line.match(/^\s*([A-Z0-9_]+)=(.*)\s*$/);if(match&&!process.env[match[1]])process.env[match[1]]=match[2].replace(/^['"]|['"]$/g,"")}
+const expires=Date.now()+120_000,signature=createHmac("sha256",process.env.ADMIN_SECRET||"").update(String(expires)).digest("hex"),cookie=`notisyon_admin=${expires}.${signature}`,base=process.env.ADMIN_TEST_BASE_URL||"http://localhost:3002";
+const modules=["inventory","shipping","payments","tax","tax-rules","team","api-access","audit","notifications","automation","localization","regions","legal","suppliers","tags","order-stages","pos","customer-groups","membership","gift-cards","loyalty","search","newsletter","banners","popups","message-templates","invoice-design","contracts","cookies","feeds","shipping-integrations","currency"];
+const settings=["company","payment","orders","seo","products","site","texts","social","marketing","suppliers"];
+const pages=["/admin","/admin/products","/admin/products/new","/admin/products?archive=1","/admin/categories","/admin/brands","/admin/orders","/admin/customers","/admin/campaigns","/admin/blog","/admin/pages","/admin/theme","/admin/theme/identity","/admin/theme/header","/admin/theme/footer","/admin/theme/cards","/admin/theme/home","/admin/theme/code","/admin/blocks","/admin/files","/admin/forms","/admin/reviews","/admin/seo","/admin/seo/sitemap","/admin/reports","/admin/integrations","/admin/settings","/admin/settings/domains","/admin/settings/email",...settings.map(name=>`/admin/settings/${name}`),...modules.map(name=>`/admin/control/${name}`)];
+const publicPages=["/","/urunler","/blog","/hesabim","/arama?q=defter","/sepet","/odeme"];
+const failures=[];
+for(const url of [...pages,...publicPages]){const response=await fetch(`${base}${url}`,{headers:url.startsWith("/admin")?{cookie}:{}});if(!response.ok)failures.push(`${url}: ${response.status}`);}
+const apiRoutes=["/api/admin/team","/api/admin/api-access","/api/admin/newsletter","/api/admin/search","/api/admin/operations?resource=dashboard","/api/admin/operations?resource=orders","/api/admin/operations?resource=customers","/api/admin/operations?resource=inventory","/api/admin/operations?resource=campaigns","/api/admin/operations?resource=gift_cards","/api/admin/operations?resource=loyalty","/api/admin/operations?resource=pages","/api/admin/operations?resource=redirects","/api/admin/operations?resource=audit","/api/admin/integrations","/api/admin/reviews","/api/admin/seo","/api/admin/files","/api/admin/forms","/api/admin/blocks"];
+for(const url of apiRoutes){const response=await fetch(`${base}${url}`,{headers:{cookie}});if(!response.ok)failures.push(`${url}: ${response.status}`);}
+if(failures.length)throw new Error(`ROUTE_SMOKE_FAILED\n${failures.join("\n")}`);
+console.log(`ROUTE_SMOKE_OK: ${pages.length} yönetim, ${publicPages.length} mağaza ve ${apiRoutes.length} API rotası doğrulandı.`);

@@ -1,0 +1,191 @@
+/* Yönetim paneli son görsel sistem: bannersız, yüksek kontrastlı ve okunabilir. */
+.admin-shell-v3 .admin-top h1 { font-size: 34px; }
+.admin-shell-v3 .admin-top > div:first-child > span { font-size: 11px; letter-spacing: .14em; }
+.admin-shell-v3 .admin-top p { color: #65758b; font-size: 13px; line-height: 1.55; }
+.admin-shell-v3 .system-live { font-size: 12px; padding: 10px 13px; }
+
+/* Büyük koyu tanıtım bannerlarını düz başlık/özet alanlarına dönüştür. */
+.admin-shell-v3 :is(.control-hero,.benefit-hero,.dictionary-hero,.catalog-studio-head,.block-page-intro) {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--admin-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--admin-ink) !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  padding: 0 0 20px !important;
+}
+
+.admin-shell-v3 :is(.control-hero,.benefit-hero,.dictionary-hero,.catalog-studio-head,.block-page-intro)::after { display: none !important; }
+.admin-shell-v3 :is(.control-hero,.benefit-hero,.dictionary-hero,.catalog-studio-head,.block-page-intro) :is(h2,p,b,dt,dd,span,small) { color: inherit !important; }
+.admin-shell-v3 :is(.control-hero,.benefit-hero,.dictionary-hero,.catalog-studio-head,.block-page-intro) h2 { font-size: 23px; }
+.admin-shell-v3 :is(.control-hero,.benefit-hero,.dictionary-hero,.catalog-studio-head,.block-page-intro) p { color: #66768b !important; font-size: 13px; }
+.admin-shell-v3 .control-score,
+.admin-shell-v3 .dictionary-hero dl,
+.admin-shell-v3 .benefit-hero > b { background: #fff !important; border: 1px solid var(--admin-line); border-radius: 11px; color: var(--admin-ink) !important; padding: 12px 15px; }
+.admin-shell-v3 .control-score::after { display: none; }
+.admin-shell-v3 .variant-summary { background: #fff !important; border: 1px solid var(--admin-line); color: var(--admin-ink); }
+.admin-shell-v3 .variant-summary :is(span,h3,p,dt,dd) { color: inherit; }
+.admin-shell-v3 .variant-summary p,.admin-shell-v3 .variant-summary dd { color: #6c7a8e; }
+.admin-shell-v3 .variant-summary dl div { border-left-color: var(--admin-line); }
+
+/* Rehber: koyu banner yerine bağımsız KPI kartları. */
+.blog-admin-overview { display: grid; gap: 12px; grid-template-columns: repeat(4,1fr); }
+.blog-admin-overview article { background: #fff; border: 1px solid var(--admin-line); border-radius: 13px; display: grid; gap: 5px; min-height: 92px; padding: 18px 20px; }
+.blog-admin-overview b { color: #17243b; font-size: 27px; }
+.blog-admin-overview span { color: #66768b; font-size: 13px; font-weight: 700; }
+.admin-shell-v3 .blog-admin-actions { border-radius: 13px; padding: 15px 17px; }
+.admin-shell-v3 .blog-admin-actions :is(button,a) { font-size: 13px; min-height: 42px; }
+.admin-shell-v3 .blog-admin-actions > span { color: #5f6f84; font-size: 13px; }
+.admin-shell-v3 .blog-admin-list > header span { font-size: 11px; }
+.admin-shell-v3 .blog-admin-list h3 { font-size: 22px; }
+.admin-shell-v3 .blog-table-head { font-size: 12px; }
+.admin-shell-v3 .blog-table-row { font-size: 13px; min-height: 76px; }
+.admin-shell-v3 .blog-table-row b small { font-size: 11px; }
+.admin-shell-v3 .blog-table-row em,.admin-shell-v3 .blog-table-row strong { font-size: 12px; }
+.admin-shell-v3 .blog-editor-card h3 { font-size: 18px; }
+.admin-shell-v3 .blog-editor-card label,.admin-shell-v3 .blog-category-modal > label { font-size: 13px; }
+.admin-shell-v3 .blog-editor-card :is(input,textarea,select),.admin-shell-v3 .blog-category-modal :is(input,textarea) { font-size: 14px; min-height: 44px; }
+.admin-shell-v3 .blog-card-heading > p,.admin-shell-v3 .blog-field-help,.admin-shell-v3 .blog-editorial-score p,.admin-shell-v3 .blog-editorial-score li { font-size: 12px; }
+
+/* Kategori sayfası: banner yerine ince işlem satırı. */
+.catalog-studio-tools { align-items: center; background: #fff; border: 1px solid var(--admin-line); border-radius: 13px; display: flex; justify-content: space-between; margin-bottom: 16px; padding: 14px 17px; }
+.catalog-studio-tools > div { align-items: baseline; display: flex; gap: 9px; }
+.catalog-studio-tools b { font-size: 24px; }
+.catalog-studio-tools span { color: #55667d; font-size: 13px; font-weight: 700; }
+.catalog-studio-tools p { color: #748297; font-size: 12px; margin: 0 0 0 18px; }
+.catalog-studio-tools button { background: #172f55; border: 1px solid #172f55; border-radius: 9px; color: #fff; cursor: pointer; font-size: 13px; font-weight: 750; padding: 11px 15px; }
+.catalog-studio-tools button:hover { background: #29496f; transform: translateY(-1px); }
+
+/* Ürün, kategori ve diğer yoğun formlarda tipografi/kontrast. */
+.admin-shell-v3 :is(.studio-card-title span,.variant-summary span,.inventory-overview header span,.admin-card-title span,.category-editor > header span) { font-size: 11px; }
+.admin-shell-v3 .studio-card-title h4 { font-size: 19px; }
+.admin-shell-v3 .studio-card-title p { color: #66768b; font-size: 12px; line-height: 1.55; }
+.admin-shell-v3 :is(.studio-card label,.variant-editor label) { color: #3f5068; font-size: 13px; }
+.admin-shell-v3 :is(.studio-card input,.studio-card select,.studio-card textarea,.variant-editor input) { font-size: 14px; min-height: 44px; }
+.admin-shell-v3 .studio-card label > small { color: #68788f; font-size: 11px; }
+.admin-shell-v3 .studio-card label > em { font-size: 11px; }
+.admin-shell-v3 .category-editor > header h3 { font-size: 24px; }
+.admin-shell-v3 .category-editor > header p { color: #66768b; font-size: 13px; }
+.admin-shell-v3 .category-tabs button { font-size: 13px; padding: 16px 15px; }
+.admin-shell-v3 .category-tree-title b { font-size: 15px; }
+.admin-shell-v3 .category-tree-title span,.admin-shell-v3 .category-tree-help { color: #65758b; font-size: 11px; line-height: 1.5; }
+.admin-shell-v3 .category-tree-list b { font-size: 13px; }
+.admin-shell-v3 .category-tree-list small,.admin-shell-v3 .category-tree-list em { font-size: 11px; }
+.admin-shell-v3 .category-editor > footer :is(a,button) { font-size: 13px; min-height: 41px; }
+.admin-shell-v3 .filter-options b { font-size: 13px; }
+.admin-shell-v3 .filter-options small,.admin-shell-v3 .seo-checks li,.admin-shell-v3 .social-preview > p { font-size: 12px; }
+
+.admin-shell-v3 .catalog-summary span { font-size: 11px; }
+.admin-shell-v3 .catalog-summary small { color: #66768b; font-size: 12px; }
+.admin-shell-v3 .catalog-summary b { font-size: 26px; }
+.admin-shell-v3 .admin-product-row { font-size: 13px; }
+.admin-shell-v3 .admin-product-row small { font-size: 11px; }
+.admin-shell-v3 .admin-product-row.head { color: #53647c; font-size: 12px; }
+.admin-shell-v3 .product-state-cell small { color: #53647c; font-size: 11px; }
+.admin-shell-v3 .catalog-row-actions { gap: 6px; }
+.admin-shell-v3 .catalog-row-actions button { font-size: 11px; min-height: 32px; padding: 7px 9px; }
+.admin-shell-v3 .catalog-pagination span { color: #53647c; font-size: 12px; }
+.admin-shell-v3 .catalog-pagination button { font-size: 12px; min-height: 36px; }
+.admin-shell-v3 .catalog-filters :is(select,button,a),.admin-shell-v3 .catalog-command-row :is(input,button) { font-size: 13px; min-height: 42px; }
+.admin-shell-v3 .product-create-layout h3 { font-size: 17px; }
+.admin-shell-v3 .product-create-layout label { color: #43536a; font-size: 12px; }
+.admin-shell-v3 .product-create-layout :is(input,textarea) { font-size: 14px; min-height: 44px; }
+.admin-shell-v3 .section-help,.admin-shell-v3 .category-picker small,.admin-shell-v3 .quick-image-upload small,.admin-shell-v3 .create-status small,.admin-shell-v3 .product-create-modal > footer > span { color: #65758b; font-size: 11px; line-height: 1.5; }
+.admin-shell-v3 .category-picker b,.admin-shell-v3 .quick-image-upload b,.admin-shell-v3 .create-status b { font-size: 13px; }
+
+/* Genel yoğun bileşenlerde 8–10px metinleri okunabilir tabana getir. */
+.admin-shell-v3 :is(.control-form label,.control-form input,.control-form select,.control-form label > small,.control-form > footer span,.control-form > footer button,.control-checks p,.control-help p,.control-help b,.dictionary-editor label,.dictionary-table,.benefit-table > div,.benefit-state) { font-size: 12px; }
+.admin-shell-v3 :is(.control-form input,.control-form select) { min-height: 43px; }
+.admin-shell-v3 :is(.control-form h3,.control-checks h3,.dictionary-editor h3,.dictionary-list h3,.benefit-panel h3) { font-size: 18px; }
+
+/* İkincil bilgiler artık kaybolmayacak kadar büyük ve kontrastlı. */
+.admin-shell-v3 :is(
+  .admin-top small,.admin-card small,.studio-card small,.blog-admin small,
+  .category-editor small,.catalog-studio small,.admin-product-detail small,
+  .control-studio small,.dictionary-studio small,.benefit-studio small
+) { color: #64758b; font-size: 11px; line-height: 1.45; }
+.admin-shell-v3 :is(
+  .variant-table th,.variant-table td,.row-actions button,.variant-editor label,
+  .inventory-overview b,.inventory-overview small,.price-note b,.price-note p
+) { font-size: 12px; }
+.admin-shell-v3 :is(.row-actions button,.variant-editor > footer button) { min-height: 34px; padding: 8px 10px; }
+.admin-shell-v3 :is(button,a,input,select,textarea) { transition: background-color .16s ease,border-color .16s ease,color .16s ease,box-shadow .16s ease,transform .16s ease; }
+.admin-shell-v3 :is(button,a):not(:disabled):hover { filter: brightness(.985); }
+
+/* Rehber modalındaki genel buton kuralının zengin editör araçlarına taşmasını engelle. */
+.admin-shell-v3 .blog-admin .admin-rich-editor { padding: 0 !important; }
+.admin-shell-v3 .blog-admin .admin-editor-toolbar { background: #f3f5f7; }
+.admin-shell-v3 .blog-admin .admin-editor-row { min-height: 44px; padding: 0 9px; }
+.admin-shell-v3 .blog-admin .admin-editor-row button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #303946;
+  font: 700 15px Arial;
+  height: 43px;
+  min-width: 38px;
+  padding: 0 9px;
+}
+.admin-shell-v3 .blog-admin .admin-editor-row button:hover,
+.admin-shell-v3 .blog-admin .admin-editor-row button:focus-visible {
+  background: #e1e7ed;
+  color: #174d94;
+  filter: none;
+  outline: 0;
+}
+.admin-shell-v3 .blog-admin .admin-editor-row .admin-source-toggle {
+  background: #eef2f6;
+  border-left: 1px solid #d7dee7;
+  color: #263a55;
+  font-size: 13px;
+  margin-left: auto;
+  min-width: 112px;
+}
+.admin-shell-v3 .blog-admin .admin-editor-row .admin-source-toggle:hover,
+.admin-shell-v3 .blog-admin .admin-editor-row .admin-source-toggle.active {
+  background: #dce7f8;
+  color: #174d94;
+}
+.admin-shell-v3 .blog-admin .admin-editor-row select {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #d7dee7;
+  border-radius: 0;
+  color: #344258;
+  font: 13px Arial;
+  height: 43px;
+  min-height: 43px;
+  padding: 0 30px 0 11px;
+}
+.admin-shell-v3 .blog-admin .admin-color {
+  border-left: 1px solid #d7dee7;
+  color: #344258;
+  display: flex;
+  height: 43px;
+  margin: 0;
+  width: 40px;
+}
+.admin-shell-v3 .blog-editor-card textarea {
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 112px;
+  padding: 13px 14px;
+}
+.admin-shell-v3 .blog-editor-card input,
+.admin-shell-v3 .blog-editor-card select { font-size: 14px; min-height: 46px; }
+.admin-shell-v3 .blog-editor-grid .admin-editor-canvas,
+.admin-shell-v3 .blog-editor-grid .admin-editor-source { min-height: 460px; }
+
+@media(max-width:900px) {
+  .blog-admin-overview { grid-template-columns: 1fr 1fr; }
+  .catalog-studio-tools { align-items: flex-start; gap: 14px; flex-direction: column; }
+  .catalog-studio-tools > div { align-items: flex-start; flex-wrap: wrap; }
+  .catalog-studio-tools p { flex-basis: 100%; margin: 0; }
+}
+
+@media(max-width:600px) {
+  .blog-admin-overview { grid-template-columns: 1fr; }
+  .admin-shell-v3 .admin-top h1 { font-size: 29px; }
+}

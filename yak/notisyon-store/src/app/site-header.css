@@ -1,0 +1,16 @@
+.notisyon-site-header, .notisyon-site-header * { box-sizing: border-box; }
+.notisyon-site-header { background:#fff; border-bottom:1px solid #ece8e1; position:sticky; top:0; z-index:20; }
+.notisyon-header-inner { align-items:center; display:grid; gap:24px; grid-template-columns:150px 1fr minmax(220px,310px) 190px; margin:auto; max-width:1510px; min-height:80px; padding:0 28px; }
+.notisyon-header-logo { display:block; width:132px; }
+.notisyon-header-logo img { display:block; height:auto; mix-blend-mode:multiply; width:132px; }
+.notisyon-header-nav { align-items:center; display:flex; gap:25px; justify-content:center; }
+.notisyon-header-nav a { color:#111; font-size:14px; font-weight:600; line-height:1; position:relative; white-space:nowrap; }
+.notisyon-header-nav a::after { background:#856e4c; bottom:-10px; content:""; height:1px; left:50%; position:absolute; transform:translateX(-50%) scaleX(0); transition:transform .2s; width:100%; }
+.notisyon-header-nav a:hover::after { transform:translateX(-50%) scaleX(1); }
+.notisyon-header-actions { align-items:center; display:flex; gap:17px; justify-content:flex-end; white-space:nowrap; }
+.notisyon-account { align-items:center; color:#111; display:flex; font-size:13px; font-weight:600; gap:7px; }
+.notisyon-account svg { fill:none; height:15px; stroke:#111; stroke-width:1.4; width:15px; }
+.notisyon-cart-icon { color:#856e4c; font-size:17px; margin-right:-13px; }
+.notisyon-header-actions > a:last-child { color:#856e4c; font-size:13px; font-weight:600; }
+@media(max-width:1150px){.notisyon-header-inner{grid-template-columns:145px 1fr 170px}.notisyon-header-nav{gap:15px}.notisyon-header-nav a{font-size:12px}}
+@media(max-width:860px){.notisyon-header-inner{grid-template-columns:1fr auto;min-height:70px;padding:0 20px}.notisyon-header-nav{display:none}.notisyon-header-actions{gap:14px}.notisyon-account span{display:none}}

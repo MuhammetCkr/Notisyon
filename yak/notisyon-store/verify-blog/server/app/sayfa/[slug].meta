@@ -1,0 +1,42 @@
+{
+  "status": 200,
+  "headers": {
+    "link": "</_next/static/css/1130954eb2430e98.css>; rel=preload; as=\"style\", </_next/static/css/ff88eb1cd134b86e.css>; rel=preload; as=\"style\", </_next/static/css/6dbb3b6645644b28.css>; rel=preload; as=\"style\"",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/sayfa/layout,_N_T_/sayfa/[slug]/layout,_N_T_/sayfa/[slug]/page"
+  },
+  "postponed": "1378:8[\"slug\"][0,{\"nextSegmentId\":0,\"rootFormatContext\":{\"insertionMode\":0,\"selectedValue\":null,\"tagScope\":0,\"viewTransition\":null},\"progressiveChunkSize\":12800,\"resumableState\":{\"idPrefix\":\"\",\"nextFormID\":0,\"streamingFormat\":0,\"bootstrapScripts\":[{\"src\":\"/_next/static/chunks/webpack-43bef708fc953520.js\"}],\"instructions\":0,\"hasBody\":false,\"hasHtml\":false,\"unknownResources\":{\"font\":{}},\"dnsResources\":{},\"connectResources\":{\"default\":{},\"anonymous\":{},\"credentials\":{}},\"imageResources\":{},\"styleResources\":{\"/_next/static/css/1130954eb2430e98.css\":[],\"/_next/static/css/ff88eb1cd134b86e.css\":[],\"/_next/static/css/6dbb3b6645644b28.css\":[]},\"scriptResources\":{},\"moduleUnknownResources\":{},\"moduleScriptResources\":{}},\"replayNodes\":[[\"sf\",0,[[\"Context\",0,[[\"Context\",0,[[\"ServerInsertedHTMLProvider\",0,[[\"Context\",0,[[\"ic\",0,[[\"aX\",0,[[\"aG\",0,[[\"aW\",0,[[\"iu\",0,[[\"Fragment\",0,[[\"Context\",2,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"Context\",0,[[\"aX\",0,[[\"aG\",0,[[\"aW\",0,[[\"ao\",0,[[\"as\",0,[[\"il\",\"/sayfa/$d$slug/__PAGE__/_head\",[[\"Fragment\",\"h\",[[\"__next_metadata_boundary__\",2,[[\"div\",0,[[\"Suspense\",0,[],0,[\"Suspense Fallback\",0,[],null],0]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],null]],\"replaySlots\":-1}]null",
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/sayfa/$d$slug/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 49216,
+    "slots": {
+      "children": {
+        "hints": 49248,
+        "slots": {
+          "children": {
+            "hints": 49248,
+            "slots": {
+              "children": {
+                "hints": 49312,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/45c24ae4f180b58364e3ec193848ecbdacc8dcf7fa5a94a176c346d53df32ec3/$/sayfa/[slug]",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/sayfa/[slug]/page"
+    },
+    "isFallback": true
+  }
+}

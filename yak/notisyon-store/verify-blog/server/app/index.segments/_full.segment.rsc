@@ -1,0 +1,30 @@
+1:"$Sreact.fragment"
+6:I[484,[],"OutletBoundary"]
+7:"$Sreact.suspense"
+a:"ViewportBoundary"
+b:I[484,[],"$a"]
+d:"MetadataBoundary"
+e:I[484,[],"$d"]
+11:I[7123,[],"default",1]
+:HL["/_next/static/css/1130954eb2430e98.css","style"]
+:HL["/_next/static/css/ff88eb1cd134b86e.css","style"]
+:HL["/_next/static/css/6dbb3b6645644b28.css","style"]
+3:X
+9:X
+4:[["children",{"s":"__PAGE__","h":8706,"d":{"r":["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"p":true,"v":"$9"}}]]
+10:X
+12:X
+13:X
+0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":8722,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1130954eb2430e98.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/ff88eb1cd134b86e.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/6dbb3b6645644b28.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],"p":true,"v":"$3"},"c":"$Q4"},"h":{"r":["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","$Le",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lf"}]}],null]}],null]}],"p":true,"v":"$10"}},"m":"$undefined","G":["$11",[]],"S":true,"r":"$12","s":"$13","a":"$@14","l":"$undefined","p":"$undefined","d":"$undefined","b":"-RYHGBdjoyiJOy4IeSg4B","u":"$@15"}
+13:300
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+16:I[6869,[],"IconMark"]
+8:null
+f:[["$","title","0",{"children":"Notisyon | Planla. Yaz. Hatırla."}],["$","meta","1",{"name":"description","content":"Defter, planlayıcı ve özel gün ürünleri."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?7161ee1d105bc9c7","type":"image/x-icon","sizes":"48x48"}],["$","$L16","3",{}]]
+13:C
+10:C
+12:C
+9:C
+3:C
+15:false
+14:null

@@ -1,0 +1,9 @@
+"use client";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+export function AdminLoginForm({hasError}:{hasError:boolean}){const [visible,setVisible]=useState(false),[caps,setCaps]=useState(false),[pending,setPending]=useState(false);return <section className="login-card"><header><div className="login-card-icon">↳</div><div><span>YÖNETİCİ GİRİŞİ</span><h2>Devam etmek için giriş yapın</h2></div></header><form action="/api/admin/login" method="post" onSubmit={()=>setPending(true)}><label><span>Yönetici e-postası</span><div className="password-field"><input type="email" name="email" autoFocus autoComplete="username" placeholder="yonetici@notisyon.com"/></div><small>Ekip hesabı kullanmıyorsanız e-posta alanını boş bırakabilirsiniz.</small></label><label><span>Yönetici parolası</span><div className="password-field"><input type={visible?"text":"password"} name="password" required autoComplete="current-password" placeholder="Parolanızı girin" onKeyUp={e=>setCaps(e.getModifierState("CapsLock"))}/><button type="button" onClick={()=>setVisible(!visible)} aria-label={visible?"Parolayı gizle":"Parolayı göster"}>{visible?"Gizle":"Göster"}</button></div></label>{caps&&<p className="login-caps">Caps Lock açık</p>}{hasError&&<p className="login-error"><i>!</i><span><b>Giriş yapılamadı</b><small>E-posta ve parolanızı kontrol edip tekrar deneyin.</small></span></p>}<button className="login-submit" type="submit" disabled={pending}><span>{pending?"Giriş yapılıyor…":"Yönetim paneline giriş yap"}</span><i>→</i></button><div className="login-session"><i>✓</i><span><b>Güvenli oturum</b><small>Oturumunuz 12 saat sonra otomatik kapanır.</small></span></div></form></section>}
+
+export function AdminLoginFormFromUrl() {
+  const searchParams = useSearchParams();
+  return <AdminLoginForm hasError={searchParams.get("error") === "1"} />;
+}

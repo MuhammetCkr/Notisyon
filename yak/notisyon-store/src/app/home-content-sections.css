@@ -1,0 +1,38 @@
+.notisyon-editorial-final, .notisyon-editorial-final *, .notisyon-guide-final, .notisyon-guide-final * { box-sizing:border-box; }
+.notisyon-editorial-final { background:#f4efe8; border-radius:24px; display:grid; grid-template-columns:1.55fr 1fr; margin:34px auto 38px; max-width:1480px; overflow:hidden; width:calc(100% - 64px); }
+.notisyon-editorial-copy { display:flex; flex-direction:column; justify-content:center; min-height:330px; padding:42px 54px; }
+.notisyon-editorial-kicker { color:#856e4c; font-size:10px; font-weight:700; letter-spacing:.14em; margin-bottom:15px; }
+.notisyon-editorial-copy h2 { color:#111; font-size:40px; font-weight:700; letter-spacing:-.035em; line-height:1.08; margin:0 0 18px; }
+.notisyon-editorial-copy p { color:#665f57; font-size:13px; line-height:1.65; margin:0 0 24px; max-width:610px; }
+.notisyon-editorial-actions { align-items:center; display:flex; flex-wrap:wrap; gap:18px; }
+.notisyon-editorial-primary { align-items:center; background:#111; border-radius:999px; color:#fff!important; display:inline-flex; font-size:11px; font-weight:700; justify-content:center; min-height:44px; padding:0 22px; }
+.notisyon-editorial-primary:hover { background:#856e4c; }
+.notisyon-editorial-secondary { color:#111!important; font-size:11px; font-weight:600; }
+.notisyon-editorial-links { background:#e9dfd1; display:flex; flex-direction:column; gap:10px; justify-content:center; padding:34px; }
+.notisyon-editorial-link { align-items:center; background:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.65); border-radius:16px; color:#111!important; display:grid; grid-template-columns:38px 1fr 20px; min-height:76px; padding:0 20px; transition:.2s; }
+.notisyon-editorial-link:hover { background:#fff; transform:translateX(3px); }
+.notisyon-editorial-link > span { color:#a78b64; font-size:10px; }
+.notisyon-editorial-link strong { display:block; font-size:13px; margin-bottom:5px; }
+.notisyon-editorial-link small { color:#8a7b6c; display:block; font-size:10px; }
+.notisyon-editorial-link b { font-size:15px; font-weight:400; }
+
+.notisyon-guide-final { color:#111; margin:50px auto 58px; max-width:1480px; width:calc(100% - 64px); }
+.notisyon-guide-final-head { align-items:flex-end; display:flex; gap:30px; justify-content:space-between; margin-bottom:22px; }
+.notisyon-guide-final-head > div > span { color:#756447; display:block; font-size:10px; font-weight:700; letter-spacing:.14em; margin-bottom:8px; }
+.notisyon-guide-final-head h2 { font-size:27px; letter-spacing:-.025em; margin:0 0 7px; }
+.notisyon-guide-final-head p { color:#706b64; font-size:12px; margin:0; }
+.notisyon-guide-final-head > a { color:#111; font-size:11px; font-weight:700; }
+.notisyon-guide-final-grid { display:grid; gap:14px; grid-template-columns:repeat(4,minmax(0,1fr)); }
+.notisyon-guide-final-grid article { background:#faf8f5; border:1px solid #e5dfd6; border-radius:15px; display:flex; flex-direction:column; min-height:220px; padding:23px; transition:.2s; }
+.notisyon-guide-final-grid article:hover { background:#fff; box-shadow:0 8px 20px rgba(0,0,0,.045); transform:translateY(-2px); }
+.notisyon-guide-final-grid article > span { color:#756447; font-size:9px; font-weight:700; letter-spacing:.1em; margin-bottom:16px; }
+.notisyon-guide-final-grid h3 { font-size:18px; line-height:1.32; margin:0 0 10px; }
+.notisyon-guide-final-grid p { color:#69635d; font-size:12px; line-height:1.65; margin:0; }
+.notisyon-guide-final-grid article > a { color:#111; font-size:11px; font-weight:700; margin-top:auto; padding-top:18px; }
+.notisyon-guide-tool { align-items:center; background:#191a17; border-radius:15px; color:#fff; display:flex; gap:24px; justify-content:space-between; margin-top:16px; padding:23px 26px; }
+.notisyon-guide-tool div > span { color:#b6ec54; display:block; font-size:9px; font-weight:700; letter-spacing:.12em; margin-bottom:8px; }
+.notisyon-guide-tool h3 { font-size:20px; margin:0 0 5px; }
+.notisyon-guide-tool p { color:#d0d0cb; font-size:12px; line-height:1.6; margin:0; max-width:680px; }
+.notisyon-guide-tool > a { align-items:center; background:#a1f400; border-radius:999px; color:#111; display:flex; flex:0 0 auto; font-size:11px; font-weight:700; justify-content:center; min-height:46px; padding:0 18px; }
+@media(max-width:1000px){.notisyon-editorial-final{grid-template-columns:1fr;width:calc(100% - 36px)}.notisyon-editorial-copy{min-height:auto;padding:38px 40px}.notisyon-editorial-links{padding:24px 40px 34px}.notisyon-guide-final-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){.notisyon-editorial-final,.notisyon-guide-final{width:calc(100% - 28px)}.notisyon-editorial-copy{padding:30px 22px 26px}.notisyon-editorial-copy h2{font-size:31px}.notisyon-editorial-links{padding:18px}.notisyon-guide-final-head{align-items:flex-start;flex-direction:column;gap:10px}.notisyon-guide-final-grid{grid-template-columns:1fr}.notisyon-guide-tool{align-items:flex-start;flex-direction:column}.notisyon-guide-tool>a{width:100%}}
